@@ -14,14 +14,14 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import practica.univalle.basicretrofitadapter.Models.User;
+import practica.univalle.basicretrofitadapter.Models.Pokemon;
 import practica.univalle.basicretrofitadapter.R;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder> {
     private Context context;
-    private List<User> movieList;
+    private List<Pokemon> movieList;
 
-    public UserAdapter(Context context, List<User> movieList) {
+    public UserAdapter(Context context, List<Pokemon> movieList) {
         this.context = context;
         this.movieList = movieList;
     }
@@ -36,13 +36,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull UserViewHolder holder, int position) {
-        User user = movieList.get(position);
-        holder.titleTextView.setText(user.first_name);
-        holder.overviewTextView.setText(user.last_name);
-        holder.releaseDateTextView.setText(String.valueOf(user.id));
+        Pokemon pokemon = movieList.get(position);
+        holder.titleTextView.setText(pokemon.name);
+        holder.overviewTextView.setText(pokemon.name);
+        holder.releaseDateTextView.setText(String.valueOf(pokemon.id));
 
         Picasso.get()
-                .load(user.avatar)
+                .load(pokemon.url)
                 .placeholder(R.drawable.ic_launcher_background) // Opcional
                 .error(R.drawable.ic_launcher_foreground) // Opcional
                 .into(holder.posterImageView);

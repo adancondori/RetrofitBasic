@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import practica.univalle.basicretrofitadapter.Adapters.UserAdapter;
-import practica.univalle.basicretrofitadapter.Models.User;
-import practica.univalle.basicretrofitadapter.Service.UserResponse;
-import practica.univalle.basicretrofitadapter.Service.UserService;
+import practica.univalle.basicretrofitadapter.Models.Pokemon;
+import practica.univalle.basicretrofitadapter.Service.PokemonResponse;
+import practica.univalle.basicretrofitadapter.Service.ConectionAPI;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -21,7 +21,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
-    private List<User> userList;
+    private List<Pokemon> pokemonList;
     private UserAdapter userAdapter;
 
     @Override
@@ -29,24 +29,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initAdapter();
-        getAllUser();
+        getPokemonAPI();
     }
 
     public void initAdapter(){
-        userList = new ArrayList<>();
+        pokemonList = new ArrayList<>();
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        userAdapter = new UserAdapter(this,userList);
+        userAdapter = new UserAdapter(this, pokemonList);
         recyclerView.setAdapter(userAdapter);
     }
 
-    private void getAllUser() {
-        Call<UserResponse> call = UserService.getMovieAPI().getAllUser();
-        call.enqueue(new Callback<UserResponse>() {
+    private void getPokemonAPI() {
+        Call<PokemonResponse> call = ConectionAPI.getConectionAPI().getPokemon(1);
+        call.enqueue(new Callback<PokemonResponse>() {
             @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+            public void onResponse(Call<PokemonResponse> call, Response<PokemonResponse> response) {
                 if (response.isSuccessful()) {
-                    userList.addAll(response.body().getUser());
+                    Pokemon pokemon = response.body().getPokemon();
+                    pokemonList.add(pokemon);
                     userAdapter.notifyDataSetChanged();
                 } else {
                     Log.e("MainActivity", "Error al obtener la lista de películas: " + response.message());
@@ -54,18 +55,38 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
+            public void onFailure(Call<PokemonResponse> call, Throwable t) {
+                Log.e("MainActivity", "onFailure al obtener la lista de películas: " + t.toString());
+            }
+        });
+        /*
+        Call<PokemonResponse> call = ConectionAPI.getMovieAPI().getPokemon();
+        call.enqueue(new Callback<PokemonResponse>() {
+            @Override
+            public void onResponse(Call<PokemonResponse> call, Response<PokemonResponse> response) {
+                if (response.isSuccessful()) {
+                    pokemonList.addAll(response.body().getUser());
+                    userAdapter.notifyDataSetChanged();
+                } else {
+                    Log.e("MainActivity", "Error al obtener la lista de películas: " + response.message());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<PokemonResponse> call, Throwable t) {
                 Log.e("MainActivity", "Error al obtener la lista de películas: " + t.getMessage());
             }
         });
+         */
     }
     private void getUserPerPage() {
-        Call<UserResponse> call = UserService.getMovieAPI().getUserPerPage(1,12);
-        call.enqueue(new Callback<UserResponse>() {
+        /*
+        Call<PokemonResponse> call = ConectionAPI.getMovieAPI().getUserPerPage(1,12);
+        call.enqueue(new Callback<PokemonResponse>() {
             @Override
-            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+            public void onResponse(Call<PokemonResponse> call, Response<PokemonResponse> response) {
                 if (response.isSuccessful()) {
-                    userList.addAll(response.body().getUser());
+                    pokemonList.addAll(response.body().getUser());
                     userAdapter.notifyDataSetChanged();
                 } else {
                     Log.e("MainActivity", "Error al obtener la lista de películas: " + response.message());
@@ -73,10 +94,11 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<UserResponse> call, Throwable t) {
+            public void onFailure(Call<PokemonResponse> call, Throwable t) {
                 Log.e("MainActivity", "Error al obtener la lista de películas: " + t.getMessage());
             }
         });
+         */
     }
 /*
     public void initUsers(){
