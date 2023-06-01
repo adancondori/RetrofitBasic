@@ -1,6 +1,11 @@
 package practica.univalle.basicretrofitadapter.Models;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Pokemon {
+    @PrimaryKey(autoGenerate = true)
     public int id;
     public int weight;
     public String name;
