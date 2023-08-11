@@ -26,4 +26,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(MainActivity.this, FactorialActivity.class));
     }
 
+    public void goHorseRaceActivity(View v) {
+        startActivity(new Intent(MainActivity.this, HorseRaceActivity.class));
+    }
 }
