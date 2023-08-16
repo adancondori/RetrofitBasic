@@ -11,10 +11,7 @@ import android.widget.ProgressBar;
 import practica.univalle.basicretrofitadapter.models.Horse;
 
 public class HorseRaceActivity extends AppCompatActivity {
-
     private static final int NUM_CABALLOS = 2;
-
-
     private Horse[] horses = new Horse[NUM_CABALLOS];
 
     @Override
