@@ -3,6 +3,7 @@ package practica.univalle.basicretrofitadapter.Example2;
 import android.content.Intent;
 import android.content.IntentFilter;
 
+
 public class CustomBroadcastIntent {
     public static final String ACTION_CUSTOM_BROADCAST = "com.example.CUSTOM_BROADCAST";
     public static final String EXTRA_DATA = "data";

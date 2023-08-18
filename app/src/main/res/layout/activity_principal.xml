@@ -18,13 +18,14 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Button 1" />
+            android:onClick="gotBroadcast1"
+            android:text="Ejemplo 1" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="gotBroadcast2"
-            android:text="Button 2" />
+            android:text="Ejemplo 2" />
 
         <Button
             android:layout_width="wrap_content"
