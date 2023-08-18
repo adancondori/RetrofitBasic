@@ -1,4 +1,4 @@
-package practica.univalle.basicretrofitadapter;
+package practica.univalle.basicretrofitadapter.Example1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import practica.univalle.basicretrofitadapter.Example1.MyReceiver;
+import practica.univalle.basicretrofitadapter.R;
 
 public class MainActivity extends AppCompatActivity {
     public static final String CUSTOM_BROADCAST_ACTION = "practica.univalle.basicretrofitadapter";

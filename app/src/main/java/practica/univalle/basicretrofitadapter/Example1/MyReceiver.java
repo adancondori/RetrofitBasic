@@ -1,4 +1,4 @@
-package practica.univalle.basicretrofitadapter;
+package practica.univalle.basicretrofitadapter.Example1;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

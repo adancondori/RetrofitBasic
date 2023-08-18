@@ -10,17 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicRetrofitAdapter">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".PrincipalActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Example2.BCMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Example1.MainActivity"
+            android:exported="true">
+
+        </activity>
 
         <receiver
-            android:name="MyReceiver"
+            android:name=".Example1.MyReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
