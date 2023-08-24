@@ -7,15 +7,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
+
 import practica.univalle.basicretrofitadapter.R;
 
 public class BCMainActivity extends AppCompatActivity {
     private CustomBroadcastReceiver dynamicReceiver;
+    public TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bcmain);
+        textView = findViewById(R.id.textView);
         dynamicReceiver = new CustomBroadcastReceiver();
         registerReceiver(dynamicReceiver, CustomBroadcastIntent.createFilter());
     }

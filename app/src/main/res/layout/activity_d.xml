@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Example2.BCMainActivity">
+    tools:context=".Example3.ActivityD">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,22 +13,37 @@
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".Example1.MainActivity">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/textView"
+
+        <EditText
+            android:id="@+id/editTextA"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="XXXXX" />
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+        <EditText
+            android:id="@+id/editTextB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+        <EditText
+            android:id="@+id/editTextC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
 
         <Button
             android:id="@+id/btnSendBroadcast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="sendCustomBroadcast"
-            android:text="Send Custom Broadcast" />
+            android:onClick="publicar"
+            android:text="publicar" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Example2.BCMainActivity">
+    tools:context=".Example3.ActivityB">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,11 +13,10 @@
         android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context=".Example1.MainActivity">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textViewB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="XXXXX" />
@@ -26,7 +25,7 @@
             android:id="@+id/btnSendBroadcast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="sendCustomBroadcast"
+            android:onClick="goScreen"
             android:text="Send Custom Broadcast" />
 
     </LinearLayout>

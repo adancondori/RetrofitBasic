@@ -10,8 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BasicRetrofitAdapter">
         <activity
+            android:name=".Example3.ActivityD"
+            android:exported="false" />
+        <activity
+            android:name=".Example3.ActivityC"
+            android:exported="false" />
+        <activity
+            android:name=".Example3.ActivityB"
+            android:exported="false" />
+        <activity
+            android:name=".Example3.ActivityA"
+            android:exported="false" />
+        <activity
+            android:name=".Example2.MainActivityB"
+            android:exported="false" />
+        <activity
+            android:name=".Example2.MainActivityA"
+            android:exported="false" />
+        <activity
             android:name=".PrincipalActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,9 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".Example1.MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
 
         <receiver
             android:name=".Example1.MyReceiver"
@@ -33,6 +49,15 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="practica.univalle.basicretrofitadapter.CUSTOM_ACTION" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".Example3.BroadCastReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.UPDATE_ACTIVITY" />
             </intent-filter>
         </receiver>
     </application>
